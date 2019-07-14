@@ -1,0 +1,6 @@
+<view class="container">
+  <image class="star" wx:for="{{stars}}" wx:key="index" src="{{rate > item ?(rate-item == 0.5? half : full) : none}}">
+    <!-- <view class="item" v-if="isClick" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+    <view class="item" v-if="isClick" style="left:75rpx" data-key="{{item+1}}" bindtap="selectRight"></view> -->
+  </image>
+</view>

@@ -1,0 +1,23 @@
+.status {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.operate {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: -5px;
+}
+
+.operate button {
+  font-size: 22rpx;
+  color: #fff;
+  background: #428bca;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.price{
+  color: #ee5e7b;
+}

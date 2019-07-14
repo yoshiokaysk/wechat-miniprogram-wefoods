@@ -1,0 +1,117 @@
+.user {
+  padding: 18px 6px;
+  display: flex;
+  align-items: center;
+  background-color: #428bca;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.user-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 14px;
+  line-height: 128rpx;
+  border-radius: 50%;
+  border: 1px solid #f3f3f3;
+}
+
+.user-avatar > image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-name {
+  font-size: 38rpx;
+  color: #fff;
+  background-color: #428bca;
+  padding-left: 10px;
+}
+
+.user-name > button {
+  font-size: 34rpx;
+  color: #fff;
+  background-color: #428bca;
+  display: inline;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.user-name >button::after {
+  border: none;
+}
+
+/* 钱包优惠 */
+
+.amount {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.amount > view {
+  border-left: 1px solid #f1f1f1;
+}
+
+.amount-block {
+  width: 50%;
+  padding: 12px;
+  text-align: center;
+}
+
+.amount-text {
+  display: block;
+  font-size: 34rpx;
+  color: #666;
+}
+
+.amount-money, .amount-coupon {
+  position: relative;
+  font-size: 42rpx;
+  font-weight: 600;
+}
+
+.amount-money, .amount-money-unit {
+  color: #f90;
+}
+
+.amount-coupon, .amount-coupon-unit {
+  color: #ee5e7b;
+}
+
+.amount-money-unit, .amount-coupon-unit {
+  margin-left: 2px;
+  font-size: 12px;
+}
+
+/* 其他部分 */
+
+.more {
+  margin-top: 15px;
+  border-top: 1px solid #f8f8f8;
+}
+
+.more-item {
+  padding: 6px 4px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.more-item > .icon {
+  margin: 3px 8px;
+  color: #666;
+}
+
+.more-item > .name {
+  flex-grow: 1;
+  position: relative;
+  font-size: 34rpx;
+  color: #333;
+}

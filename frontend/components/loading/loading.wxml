@@ -1,0 +1,5 @@
+<view class="loading" wx:if="{{isLoading}}">
+  <view class="b1"></view>
+  <view class="b2"></view>
+  <view class="b3"></view>
+</view>

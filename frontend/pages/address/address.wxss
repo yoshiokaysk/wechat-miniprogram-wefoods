@@ -1,0 +1,43 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.item-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.address {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.tag {
+  margin-left: 5px;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 26rpx;
+  background: #428bca;
+  color: #fff;
+}
+
+.details {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.name,
+.gender {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.phone {
+  margin-left: 6px;
+  color: #666;
+  font-size: 26rpx;
+}

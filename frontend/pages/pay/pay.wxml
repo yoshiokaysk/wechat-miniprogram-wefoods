@@ -1,0 +1,119 @@
+<view class="settle">
+  
+  <view class="block">
+    <view class="block-item" bindtap="tapAddress">
+      <view class="black-text">
+        {{ selectAddress.id ? selectAddress.address + selectAddress.details + '(' + selectAddress.contact+')': '请选择收货地址' }}
+      </view>
+      <i class="iconfont i-arrow-r" />
+    </view>
+  </view>
+
+
+
+  <view class="block">
+    <view class="block-item">
+      <text class="black-text">送达时间</text>
+      <text class="blue-text">尽快送达</text>
+    </view>
+    <view class="block-item">
+      <text class="black-text">支付方式</text>
+      <text class="blue-text">余额支付</text>
+    </view>
+  </view>
+  <view class="block">
+    <view class="block-item">
+      <view>
+        <i class="iconfont i-shop" style="font-size:46rpx;color:#333;margin-right:8px" />
+        <text class="black-text">{{canteenInfo.name}}</text>
+      </view>
+    </view>
+    <view class="foods">
+      <view wx:for="{{foods}}" wx:key="{{index}}" class="foods-item block-item">
+        <image src="{{'http://localhost:8086' + item.icon}}"></image>
+        <text class="name">{{item.name}}</text>
+        <text class="count">x{{item.count}}</text>
+        <text class="price">¥{{item.price * item.discount}}</text>
+      </view>
+    </view>
+    <view class="block-item" wx:if="{{canteenInfo.shipping>0}}">
+      <text class="black-text">配送费</text>
+      <view>
+        <text class="price">¥{{canteenInfo.shipping}}</text>
+      </view>
+    </view>
+    <view class="block-item">
+      <text class="black-text">优惠券</text>
+      <view style="display:inline-block">
+        <block wx:if="{{!selectCoupon.id}}">
+          <text class="gray-text" bindtap="tapCoupon">
+            {{userCoupon.length > 0 ? '选择优惠券': '无可用优惠券'}}
+          </text>
+        </block>
+        <text class="red-text" bindtap="tapCoupon" wx:else>
+          {{selectCoupon.name + '(-¥' + selectCoupon.amount +')'}}
+        </text>
+      </view>
+    </view>
+    <view class="block-item">
+      <text class="foods-total">
+        合计
+        <text class="price">¥{{total}}</text>
+      </text>
+    </view>
+  </view>
+  <view class="block">
+    <view class="block-item">
+      <text class="black-text">订单备注</text>
+      <view style="text-align:right;">
+        <input class="gray-text" placeholder='口味偏好' bindinput="tapInput"></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="deal">
+  <view class="deal-total">
+    合计 ¥{{total}}
+    <text class="red-text" wx:if="{{selectCoupon.id}}">
+      {{ '(已优惠¥' + selectCoupon.amount +')'}}
+    </text>
+  </view>
+  <view class="deal-pay" bindtap="tapSubmitOrder">
+    <text>确认支付</text>
+  </view>
+</view>
+<pop visible="{{popAddress}}" bindisVisible="isVisible" data-type="address">
+  <view slot="slot" class="popAddress">
+    <view class="popHeader" bindtap="tapCreateAddress">
+      <i class="iconfont i-add" style="font-size:30rpx;" />
+      <text style="color:#333">管理地址</text>
+    </view>
+    <view class="popItem" wx:for="{{userAddress}}" wx:key="{{index}}" data-index="{{index}}" bindtap="tapSelectAddress">
+      <view class="popSelect">
+        <i wx-if="{{item.id === selectAddress.id}}" class="iconfont i-yes" style="color:#428bca;font-size:40rpx;font-weigt:700" />
+      </view>
+      <view class="popMain">
+        <text class="address">{{item.address + item.details }}</text>
+        <text class="contact">
+          {{item.contact + (item.gender === 1 ? '(先生)' : '(女士)' ) + '  ' + item.phone}}
+        </text>
+      </view>
+      <text wx:if="{{item.tag}}" class="popTag">{{item.tag}}</text>
+    </view>
+  </view>
+</pop>
+<pop visible="{{popCoupon}}" bindisVisible="isVisible" data-type="coupon">
+  <view slot="slot" class="popCoupon">
+    <view class="popHeader">
+      <text style="color:#333">选择优惠券</text>
+    </view>
+    <view wx:for="{{userCoupon}}" wx:key="{{index}}" class="popItem" data-index="{{index}}" bindtap="tapSelectCoupon">
+      <text class="popAmount">¥ {{item.amount}}</text>
+      <view class="popMain">
+        <text class="name">{{item.name}}</text>
+        <text class="des">{{item.des}}</text>
+      </view>
+      <text class="popDate">有效期至{{ item.end }}</text>
+    </view>
+  </view>
+</pop>

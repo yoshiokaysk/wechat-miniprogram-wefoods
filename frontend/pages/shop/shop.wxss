@@ -1,0 +1,193 @@
+.info {
+  position: relative;
+  z-index: 9;
+}
+
+/* 顶部信息 */
+
+.info-banner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 12vh;
+  overflow: hidden;
+  background: linear-gradient(#428bca, #489ceb, #5fa9ed);
+}
+
+.info-icon {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: -78rpx;
+  background: transparent;
+}
+
+.collect {
+  position: absolute;
+  top: 30rpx;
+  right: 88rpx;
+  font-size: 58rpx;
+  z-index: 3;
+  color: #dd4b39;
+}
+
+.info-icon-img {
+  width: 138rpx;
+  height: 138rpx;
+  border-radius: 4px;
+}
+
+.info-details {
+  text-align: center;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.info-details-name {
+  font-size: 40rpx;
+  margin: 28rpx 0;
+  color: #333;
+}
+
+/* 评价 */
+
+.comment-advance {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 20px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.comment-advance-left, .comment-advance-right {
+  display: flex;
+  align-items: center;
+}
+
+.comment-advance-right {
+  padding: 4px 2px;
+  border-left: 1px solid #f9f9f9;
+}
+
+.left-score {
+  font-size: 52rpx;
+  font-weight: 700;
+  margin-left: 24px;
+  word-spacing: 2px;
+  color: #ea6f5a;
+}
+
+.left-rate {
+  margin: 1px 0 0 10px;
+}
+
+.left-rate > text {
+  font-size: 32rpx;
+  color: gray;
+}
+
+.comment-types {
+  padding: 10px 6px;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px;
+}
+
+/* 商家 */
+
+.shop, .comment, .order {
+  background: #f5f5f5;
+}
+
+.shop-title {
+  padding: 10px 6px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.shop-title > .name {
+  margin-bottom: 4px;
+}
+
+.shop-title > .text {
+  font-size: 25rpx;
+}
+
+.shop-item {
+  padding: 10px 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.shop .name {
+  font-size: 30rpx;
+  color: #222;
+}
+
+.shop .text {
+  font-size: 30rpx;
+  color: #666;
+}
+
+/* template */
+
+/* 评分模板 */
+
+.tmpl-score {
+  padding-top: 8px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tmpl-score-name {
+  font-size: 38rpx;
+  color: #666;
+}
+
+.tmpl-score-score {
+  font-size: 36rpx;
+  color: gray;
+}
+
+/* 类别筛选 */
+
+.comment-types {
+  display: flex;
+  align-items: center;
+  padding: 18px 6px;
+}
+
+.tmpl-types {
+  display: inline-block;
+  margin-right: 14px;
+}
+
+.tmpl-types > text {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px;
+}
+
+.tmpl-types-primary {
+  background-color: #428bca;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.tmpl-types-common {
+  background-color: #ebf5ff;
+  color: #6d7885;
+  font-size: 30rpx;
+}
+
+.tmpl-types-poor {
+  background-color: #f5f5f5;
+  color: #aaa;
+  font-size: 30rpx;
+}

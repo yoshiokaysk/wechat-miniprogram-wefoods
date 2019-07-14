@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar",
+    "pop": "/components/pop/pop",
+    "canteen": "/components/_canteen/_canteen",
+    "sort": "/components/_sort/_sort",
+    "order": "/components/_order/_order"
+  },
+  "navigationBarTitleText": "管理页面"
+}

@@ -1,0 +1,55 @@
+<view class="container">
+    <view class="tags" bindtap="tapTag">
+        <text wx:for="{{orderType}}" wx:key="index" data-index="{{index}}" data-key="{{item.key}}"
+            class="{{activeType === index ? 'active' : ''}}">{{item.name}}</text>
+    </view>
+
+    <text class="nothing" wx-if="{{currentOrders.length === 0 }}">暂无订单</text>
+    <view wx-else class="order">
+        <view class="item" wx:for="{{currentOrders}}" wx:key="index">
+            <view class="meta">
+                <text class="date">订单日期:{{item.orderDate}}</text>
+                <text class="id">订单编号:{{item.orderId}}</text>
+            </view>
+            <view class="receive">
+                <text
+                    class="address">配送至:{{item.address.address + item.address.details }}-{{item.address.contact + "("+item.address.phone +")"}}</text>
+            </view>
+            <view class="rider" wx:if="{{item.rider}}">
+                <text>配送员: {{item.rider.name}} ({{item.rider.phone}})</text>
+            </view>
+            <view class="info">
+                <text class="price">订单价格(¥): {{item.price}}</text>
+                <text>订单状态: {{item.statusInfo}}</text>
+            </view>
+
+            <view class="details">
+                <text style="margin-bottom:10px;">订单详情</text>
+                <view class="foods">
+                    <view class="foods-item" wx:for="{{item.details}}" wx:key="index">
+                        <image src="{{ 'http://localhost:8086'+ item.icon}}"></image>
+                        <view class="foods-meta">
+                            <text class="name">{{item.name}}</text>
+                            <text class="count">{{item.count}}份</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="operate">
+                <button bindtap="tapShipping" class="shipping" data-id="{{item.orderId}}"
+                    wx:if="{{item.status === 1}}">配送</button>
+                <button bindtap="tapComplete" class="complete" data-id="{{item.orderId}}"
+                    wx:if="{{item.status === 2}}">订单完成</button>
+            </view>
+        </view>
+    </view>
+    <pop visible="{{riderVisible}}" bindisVisible="isVisible">
+        <view slot="slot" class="riders">
+            <p>请选择配送人员</p>
+            <view class="block-item" wx:for="{{riders}}" wx:key="index" data-riderId="{{item.id}}" bindtap="tapRider">
+                <text class="gray-text">{{item.name}} - ({{item.phone}})</text>
+            </view>
+        </view>
+    </pop>
+</view>

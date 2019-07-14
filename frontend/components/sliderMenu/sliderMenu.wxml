@@ -1,0 +1,83 @@
+<template name="food">
+  <view class="food">
+    <!-- 菜品展示 -->
+    <image class="icon" src="{{'http://localhost:8086' + item.icon}}" />
+    <view class="desc">
+      <text class="name">{{ item.name }}</text>
+      <text class="des">{{item.des}}</text>
+      <view class="bottom">
+        <!-- 菜品价格 -->
+        <view class="price">
+          <view class="current">
+            ¥{{item.discount < 1 ? item.price * item.discount : item.price}}
+          </view>
+          <view class="previous" wx:if="{{item.discount < 1}}">¥{{item.price}}</view>
+        </view>
+        <!-- 菜品操作 -->
+        <view class="operate" data-item="{{item}}" bindtap="tapOp">
+          <i wx:if="{{foods[item.id].count > 0 }}" class="reduce iconfont i-sub" data-type="sub" />
+          <text wx:if="{{foods[item.id].count > 0 }}" class="count">{{foods[item.id].count }}</text>
+          <i class="add iconfont i-add" data-type="add" />
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 菜单 -->
+<view class="container">
+  <view class="menu">
+    <view id="{{index}}" wx:key="{{index}}" wx:for="{{goods}}" bindtap="tapActive" class="{{ index === active ? 'menuItem menuItem-active' : 'menuItem' }}">
+      <text class="menuItem-text">{{ item.name }}</text>
+    </view>
+  </view>
+  <view class="foods">
+    <block wx:key="{{index}}" wx:for="{{goods}}">
+      <view class="tips" id="{{'tips'+index}}">
+        <text class="name">{{ item.name }}</text>
+        <text class="des">{{ item.des }}</text>
+      </view>
+      <template is="food" wx:for="{{item.goods}}" wx:key="index" data="{{item,foods}}" />
+    </block>
+  </view>
+  <view class="cart">
+    <view class="icon" bindtap="tapCart">
+      <i class="iconfont i-cart cart-icon" />
+      <text class="count" wx:if="{{length > 0}}">{{ length }}</text>
+    </view>
+    <view class="price">
+      <text class="total">{{ total > 0 ? '¥' + total: '' }}</text>
+      <text class="shipping">另需配送费 ¥{{canteenInfo.shipping}} 元</text>
+    </view>
+    <view class="{{ total > 0 ? 'account':'account-inactive' }}" bindtap="tapSettle">
+      <block wx:if="{{total > 0 }}">
+        {{total < canteenInfo.lowest ? '最低¥' +  canteenInfo.lowest +'起送' :'去结算'}}
+      </block>
+      <block wx:else>空空如也</block>
+    </view>
+  </view>
+</view>
+<pop visible="{{cartVisible}}" bindisVisible="isVisible">
+  <view slot="slot" class="details">
+    <view class="header">
+      <text>已购商品</text>
+      <text bindtap='tapClearAll'>清空</text>
+    </view>
+    <view class="main">
+      <view class="item" wx:for="{{foods}}" wx:key="{{index}}" wx:if="{{item}}">
+        <text class="name">{{item.name}}</text>
+        <text class="amount">x{{item.count}}</text>
+        <view class="price">
+          <view class="current">
+            ¥{{item.discount < 1 ? item.price * item.discount * item.count : item.price * item.count}}
+          </view>
+          <view class="previous" wx:if="{{item.discount < 1}}">¥{{item.price* item.count}}</view>
+        </view>
+        <view class="operate" data-item="{{item}}" bindtap="tapOp">
+          <i wx:if="{{foods[item.id].count > 0 }}" class="reduce iconfont i-sub" data-type="sub" />
+          <text wx:if="{{foods[item.id].count > 0 }}" class="count">{{foods[item.id].count }}</text>
+          <i class="add iconfont i-add" data-type="add" />
+        </view>
+      </view>
+    </view>
+  </view>
+</pop>

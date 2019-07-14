@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="item">
+    <text class="title">当前金额</text>
+    <input disabled="true" value="{{ '￥ ' + balance + ' 元'}}" />
+  </view>
+  <view class="item">
+    <text class="title">充值金额</text>
+    <input type="number" value="{{recharge}}" bindinput="tapInput" />
+  </view>
+
+  <button class="btn" bindtap="tapSubmit">提交</button>
+</view>

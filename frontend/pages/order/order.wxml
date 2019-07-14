@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="orderType" bindtap="tapTag">
+    <view wx:for="{{orderType}}" wx:key="index" data-key="{{item.key}}" class="{{activeType === item.key ? 'active' : ''}}">
+      {{item.name}}
+    </view>
+  </view>
+
+  <loading isLoading="{{isLoading}}" />
+  
+  <view wx-if="{{!isLoading}}" class="order-item" wx:for="{{currentOrders}}" wx:key="index">
+    <view class="order-details" data-index="{{index}}" bindtap="tapItem">
+      <image class="icon" src="{{'http://localhost:8086' + item.canteen.icon}}"></image>
+      <view class="details">
+        <view class="flex-center-between">
+          <text class="canteen">{{item.canteen.name}}</text>
+          <text class="status status-{{item.status}}">{{item.statusInfo}}</text>
+        </view>
+        <text class="date">{{item.orderDate}}</text>
+        <view class="flex-center-between" style="margin:8px 0;">
+          <text class="desc">{{item.detailsInfo}}</text>
+          <text class="amount">￥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="operate">
+      <button wx:if="{{item.status === 3}}" bindtap="tapComment" data-index="{{index}}">评价</button>
+      <button wx:if="{{item.status === 3 || item.status === 4}}" bindtap="tapAgain" data-index="{{index}}">
+        再来一单
+      </button>
+    </view>
+  </view>
+  <view class="footer">没有其他订单啦</view>
+</view>

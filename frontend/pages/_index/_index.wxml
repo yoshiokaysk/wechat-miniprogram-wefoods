@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="inner">
+        <i class="iconfont i-login" style="color:#428bca;font-size: 65px;margin-bottom: 20px"></i>
+        <view class="form-item">
+            <text class="gray-text">用户:</text>
+            <input type="text" placeholder="请输入你的用户" bindinput="tapInput" data-key="username"  value="{{username}}" />
+        </view>
+        <view class="form-item">
+            <text class="gray-text">密码:</text>
+            <input type="password" placeholder="请输入你的密码" bindinput="tapInput" data-key="password" value="{{password}}" />
+        </view>
+        <view class="form-item" bindtap="tapLogin">
+            <text class="login">登录</text>
+        </view>
+    </view>
+    <view class="footer">
+        JUST SAY HELLO WORLD.
+    </view>
+</view>

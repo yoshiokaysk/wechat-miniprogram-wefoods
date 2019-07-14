@@ -1,0 +1,48 @@
+/* canteen */
+
+.canteen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px 0 6px;
+}
+
+.canteen-icon {
+  align-self: flex-start;
+  margin: 2px;
+}
+
+.canteen-icon>image:first-child {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 2px;
+  margin: 2px 4px 2px 2px;
+}
+
+.canteen-info {
+  margin-left: 6px;
+  padding: 2px 0 8px;
+  border-bottom: 1px solid #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.canteen-name {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+}
+
+.canteen-ship {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #e26d6d;
+  font-size: 28rpx;
+}

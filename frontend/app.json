@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/shop/shop",
+    "pages/pay/pay",
+    "pages/address/address",
+    "pages/addressOpreate/addressOpreate",
+    "pages/recharge/recharge",
+    "pages/coupon/coupon",
+    "pages/search/search",
+    "pages/details/details",
+    "pages/comment/comment",
+    "pages/_index/_index",
+    "pages/_manager/_manager"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#428bca",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#428bca",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icons/tabbar/h1.x64.png",
+        "selectedIconPath": "icons/tabbar/h2.x64.png",
+        "text": "外卖"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "icons/tabbar/o1.x64.png",
+        "selectedIconPath": "icons/tabbar/o2.x64.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "icons/tabbar/u1.x64.png",
+        "selectedIconPath": "icons/tabbar/u2.x64.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="header">
+    <input class="input" value="{{value}}" bindinput='tapInput' placeholder='请输入你想搜索的'></input>
+    <view class="bttn" bindtap="tapSearch">
+      <i class="iconfont i-search" stlye="font-size:26rpx;color:#fff;" />
+    </view>
+  </view>
+
+  <view class="search">
+    <text wx:if="{{history.length > 0}}">历史搜索</text>
+    <i class="iconfont i-delete" wx:if="{{history.length > 0}}" bindtap="tapHistory"  data-index="-1"></i>
+  </view>
+
+  <view class="history" bindtap='tapHistory'>
+    <view class="item" wx:for="{{history}}" wx:key="{{index}}" data-index="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="content">
+    <!-- 食堂 -->
+    <text class="title" wx:if="{{canteen.length > 0}}">食堂信息</text>
+    <view class="canteen" wx:for="{{canteen}}" wx:key="{{index}}" bindtap='tapJumpTo' data-index="{{index}}">
+      <view class="c-item">
+        <i class="iconfont i-shop" style="font-size:36rpx" />
+        <view class="c-main">
+          <text class="name">{{item.name}}</text>
+          <text class="info">综合评价: {{item.rate}} 分 | 月售: {{ item.monthSell}} 单</text>
+        </view>
+        <i class="iconfont i-arrow-r" style="font-size:36rpx" />
+      </view>
+    </view>
+    <!-- 食物 -->
+    <text class="title" wx:if="{{foods.length > 0}}">商品信息</text>
+    <view class="foods" wx:for="{{foods}}" wx:key="{{index}}" bindtap='tapJumpTo' data-index="{{index}}">
+      <view class="c-item">
+        <image class="c-icon" src="{{'http://localhost:8086'+item.foodIcon}}" />
+        <view class="c-main">
+          <text class="name">{{item.foodName}}</text>
+          <text class="info">来自 {{ item.canteenName }}</text>
+        </view>
+        <text class="price">¥{{item.price }}</text>
+        <i class="iconfont i-arrow-r" style="font-size:36rpx" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="nav">
+    <view class="location">
+      <i class="iconfont i-location" style='font-size:38rpx;color:white;margin-right:6px;' />
+      <text>{{ location }}</text>
+    </view>
+    <view class="weather" style="background:#428bca">
+      <view class="weather-icon" style="background:#428bca">
+        <i class="{{ 'iconfont ' + weather.icon }}" style="color:#fff;margin-right:4px;" />
+      </view>
+      <view class="weather-text">
+        <text>{{ weather.templ }}°</text>
+        <text>{{ weather.desc }}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 搜索框 -->
+  <view class="search-wrapper" bindtap='tapSearch'>
+    <view class="search-inner">
+      <i class="iconfont i-search" stlye="font-size:20rpx;color:gray;" />
+      <text class="search-text">搜索</text>
+    </view>
+  </view>
+  <!-- navbar -->
+  <navbar tabs="{{['全部', '销量', '评分']}}" bindonClick="tapView">
+    <view slot="tabs-0">
+      <loading isLoading="{{isLoading}}" />
+      <canteen wx:for="{{canteen}}" wx:key="index" data="{{canteen[index]}}" data-id="{{item.id}}" bindtap="tapCanteen" />
+    </view>
+    <view slot="tabs-1">
+      <canteen wx:for="{{canteen}}" wx:key="index" data="{{canteen[index]}}" data-id="{{item.id}}" bindtap="tapCanteen" />
+    </view>
+    <view slot="tabs-2">
+      <canteen wx:for="{{canteen}}" wx:key="index" data="{{canteen[index]}}" data-id="{{item.id}}" bindtap="tapCanteen" />
+    </view>
+  </navbar>
+  <!-- footer -->
+  <view class="footer">
+    没有更多的商家啦。
+  </view>
+</view>

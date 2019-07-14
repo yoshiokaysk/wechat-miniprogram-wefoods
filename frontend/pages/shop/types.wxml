@@ -1,0 +1,10 @@
+<template name="types" >
+  <view class="tmpl-types">
+    <text wx:if="{{type === '全部'}}" class="tmpl-types-primary"> {{ type }} 
+    </text>
+    <text wx:elif="{{type === '好评'}}" class="tmpl-types-common"> {{ type }} ({{amount}})
+    </text>
+    <text wx:elif="{{type === '差评'}}" class="tmpl-types-poor"> {{ type }} ({{amount}})
+    </text>
+  </view>
+</template>

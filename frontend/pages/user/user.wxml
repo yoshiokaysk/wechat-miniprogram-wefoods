@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user">
+    <view class="user-avatar">
+      <image wx:if="{{user.avatar.length > 0 }}" src="{{user.avatar}}" />
+    </view>
+    <view class="user-info">
+      <view class="user-name">
+        <text wx:if="{{user.nickName.length > 0 }}">{{ user.nickName }}</text>
+        <button wx:else open-type="getUserInfo" bindtap="tapRegister">立即注册</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 余额 优惠 -->
+  <view class="amount">
+    <view class="amount-block">
+      <navigator url="/pages/recharge/recharge?amount=168&&userId='1240'">
+        <view>
+          <text class="amount-money">{{ user.balance }}</text>
+          <text class="amount-money-unit">元</text>
+        </view>
+        <text class="amount-text">我的余额</text>
+      </navigator>
+    </view>
+
+    <view class="amount-block">
+      <navigator url="/pages/coupon/coupon">
+        <view>
+          <text class="amount-coupon">{{ user.coupon }}</text>
+          <text class="amount-coupon-unit">个</text>
+        </view>
+        <text class="amount-text">我的优惠</text>
+      </navigator>
+    </view>
+  </view>
+
+
+  <!-- 菜单 -->
+  <view class="more">
+    <view class="more-item" wx:for="{{mainMenu}}" wx:key="index" data-item="{{item}}" bindtap="tapMenu">
+      <i class="{{'icon iconfont ' + item.icon }}" />
+      <text class="name">{{ item.name }}</text>
+      <i class="iconfont i-arrow-r" />
+    </view>
+  </view>
+
+  <view class="more">
+    <view class="more-item" wx:for="{{otherMenu}}" wx:key="index" data-item="{{item}}" bindtap="tapMenu">
+      <i class="{{'icon iconfont ' + item.icon }}" />
+      <text class="name">{{ item.name }}</text>
+      <i class="iconfont i-arrow-r" />
+    </view>
+  </view>
+
+  <view class="footer">
+    @BY LA NOCHE MAS HERMOSA 
+  </view>
+</view>

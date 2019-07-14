@@ -1,0 +1,153 @@
+.gray-text {
+    min-width: 15%;
+    font-size: 24rpx;
+}
+
+.block {
+    padding-top: 18px;
+    padding-bottom: 8px;
+}
+
+.block-item {
+    border-bottom: none;
+}
+
+input {
+    color: gray;
+    font-size: 24rpx;
+    padding: 2px 6px;
+    border: none;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu {
+    background: #f5f5f5
+}
+
+.sort-title {
+    font-weight: 500;
+    font-size: 30rpx;
+    margin: 10px;
+    color: #666;
+    text-align: center;
+    background: #f5f5f5
+}
+
+.sort-main {
+    background: #f5f5f5
+}
+
+.sort-item {
+    margin: 10px 0;
+}
+
+.operate {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.operate button {
+    width: 15vw;
+    margin: 0;
+    margin-left: 4px;
+    font-size: 24rpx;
+    padding: 0px 2px;
+}
+
+.operate .add {
+    color: #fff;
+    background: #e26d6d
+}
+
+.operate .edit {
+    color: #fff;
+    background: #5fa9ed;
+}
+
+.operate .delete {
+    color: #fff;
+    background: #e26d6d;
+}
+
+.operate .other {
+    color: gray;
+}
+
+.goods-title {
+    margin: 10px;
+    color: gray;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.foods {
+    margin-bottom: 20px;
+}
+
+.foods image {
+    width: 68px;
+    height: 68px;
+    border-radius: 2px;
+}
+
+.foods .main {
+    min-width: 70%;
+}
+
+.foods .block-item {
+    padding: 2px 0;
+    margin-bottom: 4px;
+    border-bottom: none;
+}
+
+.foods-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4px;
+}
+
+
+
+input {
+    color: gray;
+    font-size: 24rpx;
+    padding: 2px 6px;
+    border: none;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd;
+}
+
+.popButton {
+    display: block;
+    width: 80%;
+    margin: 16px auto 0 auto;
+    background: #5fa9ed;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.foodPop {
+    padding: 16px 0
+}
+
+.foodPop image {
+    width: 66px;
+    height: 66px;
+    display: block;
+    border: 1px solid #f3f3f3;
+    margin: 0px auto 4px auto;
+}
+
+.foodPop .block-item {
+    padding: 4px;
+}
+
+.addButtn {
+    background: #5fa9ed;
+    color: #fff;
+    font-size: 30rpx;
+    display: block;
+    margin: 0 10px;
+}

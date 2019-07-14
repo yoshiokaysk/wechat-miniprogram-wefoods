@@ -1,0 +1,85 @@
+<!-- 模板引入 -->
+<import src="./score.wxml" />
+<import src="./types.wxml" />
+<view class="shop">
+  <loading isLoading="{{isLoading}}" />
+  <!-- 顶部信息 -->
+  <view class="info">
+    <view class="info-banner" />
+    <view class="info-icon">
+      <image src="{{'http://localhost:8086'+ canteenInfo.icon}}" class="info-icon-img" />
+    </view>
+    <view class="info-details">
+      <text class="info-details-name">{{canteenInfo.name}}</text>
+      <view>
+        <text class="text-minor">综合评价 {{canteenInfo.rate}} 分</text>
+        <text class="text-minor"> | </text>
+        <text class="text-minor ml-5">月售 {{canteenInfo.monthSell}} 单</text>
+      </view>
+      <text class="text-minor" style="font-size:23rpx;">公告：{{canteenInfo.notice}}</text>
+    </view>
+  </view>
+  <!-- navbar -->
+  <navbar tabs="{{ ['点餐', '评价','商家']}}">
+    <!-- 点餐 -->
+    <view class="order" slot="tabs-0">
+      <sliderMenu canteenId="{{canteenId}}" canteenInfo="{{canteenInfo}}" />
+    </view>
+    <!-- 评价 -->
+    <view class="comment" slot="tabs-1" wx:hidden='true'>
+      <view class="comment-advance">
+        <view class="comment-advance-left">
+          <view class="left-rate">
+            <text>综合评分</text>
+            <star rate="{{rating.rate}}" />
+          </view>
+          <text class="left-score">{{rating.rate}}</text>
+        </view>
+        <view class="comment-advance-right">
+          <template is="score" data="{{name:'味道',score: rating.taste}}" />
+          <template is="score" data="{{name:'包装',score: rating.package}}" />
+          <template is="score" data="{{name:'配送',score: rating.delivery}}" />
+        </view>
+      </view>
+      <view class="comment-types">
+        <template wx:for="{{commentSorts}}" wx:key="index" is="types" data="{{...item}}" />
+      </view>
+      <view class="comment-list">
+        <comment wx:for="{{commentList}}" wx:key="index" data="{{item}}" />
+      </view>
+    </view>
+    <!-- 商家信息 -->
+    <view class="shop" slot="tabs-2" wx:hidden='true'>
+      <view class="shop-title">
+        <view class="name">食堂信息</view>
+        <text class="text">{{ canteenInfo.info }}</text>
+      </view>
+      <view class="shop-item">
+        <text class="name">食堂名称</text>
+        <view>
+          <text class="text">{{ canteenInfo.name }}</text>
+          <i class="iconfont i-arrow-r" />
+        </view>
+      </view>
+      <view class="shop-item">
+        <text class="name">食堂电话</text>
+        <view>
+          <text class="text">{{ canteenInfo.phone }}</text>
+          <i class="iconfont i-arrow-r" />
+        </view>
+      </view>
+      <view class="shop-item" style='margin-top:10px;'>
+        <text class="name">配送运费</text>
+        <view>
+          <text class="text" style='padding-right:5px;'>¥ {{ canteenInfo.shipping }}</text>
+        </view>
+      </view>
+      <view class="shop-item">
+        <text class="name">最低起送</text>
+        <view>
+          <text class="text" style='padding-right:5px;'>¥ {{ canteenInfo.lowest }}</text>
+        </view>
+      </view>
+    </view>
+  </navbar>
+</view>

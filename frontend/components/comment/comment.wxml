@@ -1,0 +1,31 @@
+<!--
+  icon: String  头像url
+  rate: Number 评分级别
+  name: String 用户姓名
+  time: String 评价时间
+  text: String 评价内容
+  foods: Array(string) 食物列表
+  <!-- images: Array(string) 评论图片 -->
+
+<view class="comment-item">
+
+  <view class="comment-header">
+    <image class="icon" src="{{data.avatar}}"></image>
+    <view class="mid">
+      <text class="name"> {{data.nickName}}</text>
+      <star rate="{{data.rate}}" />
+    </view>
+    <text class="time"> {{data.date}}</text>
+  </view>
+
+  <view class="commnet-details">
+
+    <view class="commnet-text">
+      <text>{{data.content}}</text>
+    </view>
+
+    <view class="commnet-images">
+      <image class="commnet-images-item" wx:for="{{data.imgs}}" wx:key="index" src="{{'http://localhost:8086'+ item}}" />
+    </view>
+  </view>
+</view>

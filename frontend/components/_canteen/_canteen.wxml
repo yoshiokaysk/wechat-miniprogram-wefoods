@@ -1,0 +1,35 @@
+<view class="info">
+    <view class="header">
+        <image src="{{'http://localhost:8086' + canteenInfo.icon}}" bindtap="tapImg"></image>
+        <text class="name">{{ canteenInfo.name }}</text>
+    </view>
+    <view class="block">
+        <view class="block-item">
+            <text class="gray-text">公告</text>
+            <input type="text" value="{{canteenInfo.notice}}" bindinput="tapInfoInput" data-key="notice"></input>
+        </view>
+        <view class="block-item">
+            <text class="gray-text">介绍</text>
+            <input type="text" value="{{canteenInfo.info}}" bindinput="tapInfoInput" data-key="info"></input>
+        </view>
+        <view class="block-item">
+            <text class="gray-text">联系电话</text>
+            <input type="number" value="{{canteenInfo.phone}}" bindinput="tapInfoInput" data-key="phone"></input>
+        </view>
+    </view>
+    <view class="block">
+        <view class="block-item">
+            <text class="gray-text">最低起送(¥)</text>
+            <input type="number" value="{{ canteenInfo.lowest}}" bindinput="tapInfoInput" data-key="lowest"></input>
+        </view>
+        <view class="block-item">
+            <text class="gray-text">配送费用(¥)</text>
+            <input type="number" value="{{ canteenInfo.shipping}}" bindinput="tapInfoInput" data-key="shipping"></input>
+        </view>
+    </view>
+    <view class="block">
+        <button class="submit" bindtap="tapSubmit">保存</button>
+    </view>
+
+
+</view>

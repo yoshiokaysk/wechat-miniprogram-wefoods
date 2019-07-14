@@ -1,0 +1,23 @@
+<view class="container">
+  <loading isLoading="{{isLoading}}" />
+  <view class="item" wx:for="{{address}}" wx:key="{{item.id}}">
+    <view class="item-main">
+      <view class="main-address">
+        <text class="address">{{ item.address}}</text>
+        <text class="tag">{{ item.tag }}</text>
+      </view>
+      <text class="details">{{ item.details}}</text>
+      <view class="user">
+        <text class="name">{{ item.contact }}</text>
+        <text class="gender">{{ item.gender === 1 ? '(先生)': '(女士)'}}</text>
+        <text class="phone">{{ item.phone}}</text>
+      </view>
+    </view>
+    <view bindtap="tapEdit" data-item="{{item}}">
+      <i class="iconfont i-edit" style="font-size:36rpx;" />
+    </view>
+  </view>
+  <view class="fixedButton" bindtap="tapAdd">
+    <text>新增地址</text>
+  </view>
+</view>

@@ -1,0 +1,274 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  border-top: 1px solid #f3f3f3;
+  padding-bottom: 10vh;
+}
+
+.menu, .foods {
+  overflow-y: auto;
+}
+
+.menu::-webkit-scrollbar, .foods::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.menu {
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.menuItem {
+  padding: 8px 6px;
+  text-align: center;
+  background: inherit;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.menuItem-active {
+  background: #fff;
+  border-right: none;
+  border-left: 3px solid #428bca;
+}
+
+.menuItem-active > .menuItem-text {
+  font-size: 30rpx;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.menuItem-text {
+  font-size: 28rpx;
+  color: #444;
+}
+
+.foods {
+  flex-grow: 1;
+  padding: 0 10px;
+  height: 100%;
+}
+
+/* tips */
+
+.tips {
+  padding: 10px 8px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.tips > .name {
+  font-size: 32rpx;
+  color: #444;
+}
+
+.tips > .des {
+  margin-left: 10px;
+  font-size: 23rpx;
+  color: #888;
+}
+
+.food {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.food .icon {
+  align-self: flex-start;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.food .desc {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin-left: 4px;
+}
+
+.food  .name {
+  font-size: 30rpx;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.food  .des {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.food  .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.food  .bottom  .price{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.current {
+  color: #f60;
+  font-size: 28rpx;
+}
+
+.previous {
+  font-size: 28rpx;
+  color: #888;
+  text-decoration: line-through;
+  padding-left: 10rpx;
+}
+
+.count {
+  margin: 0 4px;
+  font-size: 28rpx;
+}
+
+.add, .reduce {
+  font-size: 40rpx;
+  color: #428bca;
+}
+
+/* 购物车 */
+
+.cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  z-index: 1000;
+  background-color: #3d3d3f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart .icon {
+  background-color: #3d3d3f;
+  margin: 0 16px;
+  position: relative;
+}
+
+.cart .count {
+  position: absolute;
+  text-align: center;
+  padding: 0.5rpx;
+  margin: 0;
+  top: -10rpx;
+  right: 10%;
+  color: #fff;
+  width: 34rpx;
+  height: 34rpx;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  background: #de5233;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart .price {
+  color: #fff;
+  background-color: #3d3d3f;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart .total {
+  font-size: 34rpx;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart .shipping {
+  font-size: 24rpx;
+}
+
+.cart-icon {
+  color: #fff;
+  padding: 6px;
+  font-size: 62rpx;
+  background: #428bca;
+  border-radius: 50%;
+}
+
+.cart .account, .cart .account-inactive {
+  width: 30%;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  font-size: 30rpx;
+  border-radius: 0;
+  color: #fff;
+}
+
+.cart .account {
+  background-color: #52b13c;
+}
+
+.cart .account-inactive {
+  background-color: #4a4a4c;
+}
+
+.details .header {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #428bca;
+  color: #fff;
+}
+
+.details .header text:last-child {
+  font-size: 28rpx;
+}
+
+.details .header text:first-child {
+  font-size: 34rpx;
+}
+
+.details .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.details .item .name {
+  color: #555;
+  font-size: 30rpx;
+  min-width: 40%;
+}
+
+.details .item .price {
+  margin: 0 10px;
+  width: 20%;
+  display: flex;
+  
+}
+
+.details .item .amount {
+  font-size: 24rpx;
+  color: #666;
+  width: 20%;
+}
+
+.details .item .operate {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.details .item .count {
+  color: #333;
+  font-size: 26rpx;
+}

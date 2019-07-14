@@ -1,0 +1,39 @@
+.container {
+  margin-top: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 8px 14px;
+}
+
+.item > .title {
+  width: 20%;
+  min-width: 20%;
+  font-size: 28rpx;
+  text-align: center;
+  color: #444;
+}
+
+.item > input {
+  margin-left: 26px;
+  flex-grow: 1;
+  color: #555;
+  font-size: 30rpx;
+}
+
+.btn {
+  font-size: 32rpx;
+  background: #428bca;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  line-height: 10vh;
+  left: 0;
+  bottom: 0;
+  border: none;
+  outline: none;
+}

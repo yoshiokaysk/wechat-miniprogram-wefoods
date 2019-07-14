@@ -1,0 +1,96 @@
+.wrapper {
+  border-top: 1px solid #f8f8f8;
+}
+
+.header {
+  text-align: right;
+  padding-top: 6px;
+  padding-right: 12px;
+}
+
+.inner {
+  padding-bottom: 10px;
+}
+
+.pop {
+  position: fixed;
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  height: 50%;
+}
+
+@keyframes in {
+  from {
+    bottom: -100%;
+  }
+
+  to {
+    bottom: 0%;
+  }
+}
+
+@keyframes out {
+  from {
+    bottom: 0%;
+  }
+
+  to {
+    bottom: -100%;
+  }
+}
+
+.in {
+  animation-fill-mode: forwards;
+  animation-name: in;
+  animation-duration: 0.5s;
+}
+
+.out {
+  animation-fill-mode: forwards;
+  animation-name: out;
+  animation-duration: 0.5s;
+}
+
+.mask {
+  position: fixed;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(7, 17, 27, 0.6);
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    background: transparent;
+  }
+
+  to {
+    background: rgba(7, 17, 27, 0.6);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgba(7, 17, 27, 0.6);
+  }
+
+  to {
+    background: transparent;
+  }
+}
+
+.fadeIn {
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+}
+
+.fadeOut {
+  animation-fill-mode: forwards;
+  animation-name: fadeOut;
+  animation-duration: 0.6s;
+}

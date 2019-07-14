@@ -1,0 +1,21 @@
+.container {
+  line-height: 1;
+}
+
+.star {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 1px;
+}
+
+.star:last-child {
+  margin-right: 0;
+}
+
+.star  .item {
+  position: absolute;
+  top: 50rpx;
+  width: 75rpx;
+  height: 150rpx;
+}

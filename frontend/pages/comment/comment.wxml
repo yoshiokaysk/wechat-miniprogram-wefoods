@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="block">
+    <view class="block-item">
+      <view>
+        <i class="iconfont i-shop" style="font-size:46rpx;color:#333;margin-right:8px" />
+        <text class="black-text ">{{canteenName}}</text>
+      </view>
+    </view>
+    <view class="comment">
+      <star name="口味" bindchangeRate="changeRate" data-key="taste" />
+      <star name="包装" bindchangeRate="changeRate" data-key="package" />
+      <star name="配送" bindchangeRate="changeRate" data-key="delivery" />
+      <textarea type="text" class="content" placeholder='请输入你的评价内容' value="{{content}}" bindinput="tapInput" />
+    </view>
+    <view class="imgs">
+      <view class="upload" bindtap='tapImg'>上传</view>
+      <view class="info">
+        <text>上传图片</text>
+        <text>让更多人了解该食堂噢.</text>
+      </view>
+    </view>
+    <view class="gallery">
+      <image wx:for="{{imgs}}" wx:key="index" src="{{'http://localhost:8086' + item}}" />
+    </view>
+  </view>
+  <button class="fixedButton" bindtap='submit'>提交</button>
+</view>

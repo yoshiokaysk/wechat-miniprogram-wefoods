@@ -1,0 +1,10 @@
+<!--
+  name: String,
+  score: String
+-->
+<template name="score">
+  <view class="tmpl-score">
+    <text class="tmpl-score-name">{{ name }}</text>
+    <text class="tmpl-score-score">{{ score }}</text>
+  </view>
+</template>

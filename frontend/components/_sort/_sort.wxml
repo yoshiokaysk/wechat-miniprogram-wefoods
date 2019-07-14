@@ -1,0 +1,118 @@
+ <!-- 分类管理 -->
+ <view class="menu">
+     <view class="sort-title">分类管理({{sortList.length}}个分类)</view>
+     <button class="fixedButton" bindtap="tapNewSort">新建分类</button>
+     <view class="sort-main" wx:for="{{sortList}}" wx:key="index">
+         <view class="block">
+             <view class="block-item">
+                 <text class="gray-text">分类名</text>
+                 <text class="gray-text">{{item.name}}</text>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text">分类描述</text>
+                 <text class="gray-text">{{item.des}}</text>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text">分类权重</text>
+                 <text class="gray-text">{{item.weight}}</text>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text">所有菜品</text>
+                 <text class="gray-text">{{item.goods.length}}种菜品</text>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text"></text>
+                 <view class="operate">
+                     <button bindtap="tapNewFood" class="add" data-index="{{index}}">新增</button>
+                     <button bindtap="tapSortEdit" class="edit" data-index="{{index}}">编辑</button>
+                     <button bindtap="tapExpand" class="other" data-index="{{index}}"
+                         data-item="{{item}}">{{item.edit ? '关闭' : '展开'}}</button>
+                 </view>
+             </view>
+
+             <block wx:if="{{item.edit}}">
+                 <view class="goods-title">所有菜品</view>
+                 <view class="foods" wx:for="{{item.goods}}" wx:key="index">
+                     <view class="foods-item">
+                         <image src="{{ 'http://localhost:8086' +item.icon}}"></image>
+                         <view class="main">
+                             <view class="block-item">
+                                 <text class="gray-text">食物名称</text>
+                                 <text class="gray-text">{{item.name}}</text>
+                             </view>
+                             <view class="block-item">
+                                 <text class="gray-text">食物描述</text>
+                                 <text class="gray-text">{{item.des}}</text>
+                             </view>
+                             <view class="block-item">
+                                 <text class="gray-text">食物价格(¥)</text>
+                                 <text class="gray-text">{{item.price}}</text>
+                             </view>
+                             <view class="block-item">
+                                 <text class="gray-text">食物折扣(%)</text>
+                                 <text class="gray-text">{{item.discount}}</text>
+                             </view>
+                             <view class="operate">
+                                 <!-- <button bindtap="tapFoodDel" class="delete">下架</button> -->
+                                 <button bindtap="tapFoodEdit" class="edit" data-item="{{item}}">编辑</button>
+                             </view>
+                         </view>
+                     </view>
+                 </view>
+             </block>
+         </view>
+     </view>
+
+     <!-- 食物 -->
+     <pop visible="{{foodVisible}}" bindisVisible="isVisible" data-key="foodVisible">
+         <view slot="slot" class="foodPop">
+             <image src="{{ 'http://localhost:8086' +currentFood.icon}}" bindtap="tapImg"></image>
+             <view class="main">
+                 <view class="block-item">
+                     <text class="gray-text">食物名称</text>
+                     <input type="text" value="{{currentFood.name}}" bindinput="tapInput" data-type="currentFood"
+                         data-key="name"></input>
+                 </view>
+                 <view class="block-item">
+                     <text class="gray-text">食物描述</text>
+                     <input type="text" value="{{currentFood.des}}" bindinput="tapInput" data-type="currentFood"
+                         data-key="des"></input>
+                 </view>
+                 <view class="block-item">
+                     <text class="gray-text">食物价格</text>
+                     <input type="text" value="{{currentFood.price}}" bindinput="tapInput" data-type="currentFood"
+                         data-key="price"></input>
+                 </view>
+                 <view class="block-item">
+                     <text class="gray-text">食物折扣</text>
+                     <input type="text" value="{{currentFood.discount}}" bindinput="tapInput" data-type="currentFood"
+                         data-key="discount"></input>
+                 </view>
+
+                 <button bindtap="tapFoodSave" class="popButton">保存修改</button>
+             </view>
+         </view>
+     </pop>
+
+     <!-- 分类 -->
+     <pop visible="{{sortVisilbe}}" bindisVisible="isVisible" data-key="sortVisilbe">
+         <view slot="slot" class="sortPop">
+             <view class="block-item">
+                 <text class="gray-text">分类名</text>
+                 <input type="text" value="{{currentSort.name}}" bindinput="tapInput" data-type="currentSort"
+                     data-key="name"></input>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text">分类描述</text>
+                 <input type="text" value="{{currentSort.des}}" bindinput="tapInput" data-type="currentSort"
+                     data-key="des"></input>
+             </view>
+             <view class="block-item">
+                 <text class="gray-text">分类权重</text>
+                 <input type="text" value="{{currentSort.weight}}" bindinput="tapInput" data-type="currentSort"
+                     data-key="weight"></input>
+             </view>
+             <button bindtap="tapSortSave" class="popButton">保存修改</button>
+         </view>
+     </pop>
+ </view>

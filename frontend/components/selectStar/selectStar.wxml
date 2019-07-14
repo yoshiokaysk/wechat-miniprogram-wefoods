@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="inner">
+    <text class="name">{{name}}</text>
+    <view class="stars" bindtap='tapSelect'>
+      <image wx:for="{{total}}" wx:key="index" src="{{(index+1) <= current ? full :none}}" data-index="{{index}}"></image>
+    </view>
+    <text class="info">{{info}}</text>
+  </view>
+</view>

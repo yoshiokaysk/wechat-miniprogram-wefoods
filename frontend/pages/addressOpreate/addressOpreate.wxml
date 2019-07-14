@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="delete">
+    <i class="iconfont i-delete" data-type="del" bindtap="tapOp" data-id="{{1}}"></i>
+  </view>
+  <view class="inner">
+    <view class="item">
+      <text class="title">联系人</text>
+      <view class="item-main">
+        <input type="text" value="{{contact}}" bindinput="tapInput" data-key="contact" />
+      </view>
+    </view>
+    <view class="item">
+      <text class="title" />
+      <view class="item-main" bindtap="tapGender">
+        <text class="{{ gender == 1 ? 'tag tag-active' : 'tag' }}" data-gender="1">先生</text>
+        <text class="{{ gender == 2 ? 'tag tag-active' : 'tag' }}" data-gender="2">女士</text>
+      </view>
+    </view>
+    <view class="item">
+      <text class="title">电话</text>
+      <view class="item-main">
+        <input type="number" value="{{ phone }}" bindinput="tapInput" data-key="phone" />
+      </view>
+    </view>
+    <view class="item">
+      <text class="title">地址</text>
+      <view class="item-main">
+        <input type="text" value="{{ address }}" bindinput="tapInput" data-key="address"></input>
+      </view>
+    </view>
+    <view class="item">
+      <text class="title">详细地址</text>
+      <view class="item-main">
+        <input type="text" value="{{ details }}" bindinput="tapInput" data-key="details"></input>
+      </view>
+    </view>
+    <view class="item">
+      <text class="title">标签</text>
+      <view class="item-main">
+        <input type="text" value="{{ tag }}" bindinput="tapInput" data-key="tag"></input>
+      </view>
+    </view>
+  </view>
+  <button class="fixedButton" data-type="confirm" bindtap="tapOp" data-id="{{1}}">保存地址</button>
+</view>

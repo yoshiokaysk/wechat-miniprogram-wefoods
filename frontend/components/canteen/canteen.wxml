@@ -1,0 +1,32 @@
+<!-- data : Obect
+    icon: 图片路径
+    name: 店铺名字
+    rate: 店铺评分
+    monthSell: 月售
+    lowest: 起送
+    shipping: 运费 -->
+<view class="canteen">
+  <view class="canteen-icon">
+    <image src="{{'http://localhost:8086' + data.icon}}" />
+  </view>
+  <view class="canteen-info">
+    <view class="flex-center-between">
+      <text class="text-main">{{ data.name }}</text>
+      <text class="text-hint">校园达</text>
+    </view>
+    <view class="flex-center-between">
+      <view>
+        <text class="text-minor">月售{{ data.monthSell }}单</text>
+      </view>
+    </view>
+    <view class="canteen-ship">
+      <view>
+        <star style="display:inline" rate="+{{ data.rate }}" />
+      </view>
+      <view>
+        <text class="text-minor"><text class="price">¥{{data.lowest}}</text>起送 | 配送费<text class="price">¥{{data.shipping}}</text>
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

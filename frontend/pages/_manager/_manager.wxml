@@ -1,0 +1,15 @@
+<view class="container">
+    <navbar tabs="{{ ['饭堂管理', '餐品管理','订单管理']}}">
+        <!-- 食堂管理 -->
+        <view slot="tabs-0">
+            <canteen canteenInfo="{{canteenInfo}}" />
+        </view>
+        <view slot="tabs-2">
+            <order orders="{{orders}}" canteenId="{{canteenId}}" bindisReload="_fetchOrder" />
+        </view>
+        <!-- 餐品管理 -->
+        <view slot="tabs-1">
+            <sort sortList="{{sortList}}" canteenId="{{canteenId}}" bindisReload="_fetchSortList" />
+        </view>
+    </navbar>
+</view>

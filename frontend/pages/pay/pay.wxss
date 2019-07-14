@@ -1,0 +1,150 @@
+.settle {
+  background: #f5f5f5;
+  padding: 8px;
+  margin-bottom: 10vh;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.settle::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.address-item{
+  display: flex;
+  align-items: center;
+}
+.deal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  z-index: 1000;
+  background-color: #3d3d3f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deal-total {
+  background: transparent;
+  color: #fff;
+  font-size: 32rpx;
+  margin-left: 26rpx;
+}
+
+.deal-pay {
+  color: #fff;
+  background-color: #52b13c;
+  width: 30%;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  font-size: 32rpx;
+}
+
+
+
+.popAddress, .popCoupon {
+  padding: 10px 8px;
+  padding-left: 0;
+}
+
+.popAddress .popHeader {
+  font-size: 32rpx;
+  color: #333;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.popAddress .popItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.popAddress .popMain {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #000;
+  flex: 1;
+}
+
+.popAddress .popMain .address {
+  font-size: 32rpx;
+  color: #111;
+}
+
+.popAddress .popMain .contact {
+  font-size: 26rpx;
+  color: gray;
+}
+
+.popAddress .popSelect {
+  width: 10%;
+  text-align: center;
+}
+
+.popAddress .popTag {
+  margin-left: 5px;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 26rpx;
+  background: #428bca;
+  color: #fff;
+}
+
+.popCoupon .popHeader {
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.popCoupon .popItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.popCoupon .popAmount {
+  width: 20%;
+  text-align: center;
+  font-size: 34rpx;
+  color: #e26d6d;
+}
+
+.popCoupon .popMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.popCoupon .popMain .name {
+  color: #111;
+  font-size: 28rpx;
+}
+
+.popCoupon .popMain .des {
+  color: gray;
+  font-size: 22rpx;
+}
+
+.popCoupon .popDate {
+  color: gray;
+  font-size: 22rpx;
+  align-self: flex-end;
+}
+
+.price{
+  color: #e26d6d;
+  font-size: 24rpx;
+}

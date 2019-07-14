@@ -1,0 +1,13 @@
+<view class="wrapper" >
+  <view class="{{ visible ? 'pop in' : 'pop'}}" >
+    <!-- <view class="header">
+      <i bindtap="tapClose" class="iconfont i-close" style="font-size:42rpx;" />
+    </view> -->
+    <!-- inner -->
+    <view class="inner">
+      <slot name="slot"></slot>
+    </view>
+  </view>
+  <!-- 遮罩层 -->
+  <view class="{{ visible ? 'mask fadeIn' : 'mask fadeOut'}}" bindtap="tapClose" wx:if="{{visible}}" />
+</view>

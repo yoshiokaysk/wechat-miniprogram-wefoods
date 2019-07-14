@@ -1,0 +1,66 @@
+.comment-item {
+  padding: 6px 6px 10px 6px;
+  margin-bottom: 46rpx;
+  border-top: 1px solid #f1f1f1;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-header > .icon {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  margin: 8px 6px;
+}
+
+.comment-header > .mid {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.comment-header > .mid >.name {
+  color: #666;
+  font-size: 32rpx;
+}
+
+.comment-header > .time {
+  margin-right: 4px;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.commnet-details {
+  padding: 2px;
+  color: #666;
+  border-bottom: 1px;
+}
+
+.commnet-images {
+  margin: 10rpx 0 6rpx;
+}
+
+.commnet-images-item {
+  width: 198rpx;
+  height: 198rpx;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.commnet-foods > text {
+  width: 232rpx;
+  font-size: 32rpx;
+  color: #999;
+  padding: 6px 2px;
+  border: 0.5px solid #ebebeb;
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+.commnet-text {
+  font-size: 28rpx;
+  margin: 10px 0;
+}

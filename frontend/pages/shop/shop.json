@@ -1,0 +1,8 @@
+{
+  "usingComponents": { "loading": "/components/loading/loading",
+    "navbar": "/components/navbar/navbar",
+    "star": "/components/star/star",
+    "comment": "/components/comment/comment",
+    "sliderMenu": "/components/sliderMenu/sliderMenu"
+  }
+}

@@ -1,0 +1,30 @@
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 6px;
+}
+
+.inner .stars {
+  text-align: center;
+}
+
+image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.inner .name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.inner .info {
+  font-size: 23rpx;
+  color: gray;
+}
+
+.inner text {
+  width: 20%;
+  text-align: center;
+}
