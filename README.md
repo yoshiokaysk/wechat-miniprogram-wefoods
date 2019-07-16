@@ -76,11 +76,11 @@ frontend目录下是服务端的源代码，以下命令都在此目录下执行
 
 #### 服务端运行预览
 
-![Where is my image?](https://github.com/Lemonreds/wefoods/blob/master/preview/b1.png)
+![Where is my image?](https://github.com/Lemonreds/wechat-miniprogram-wefoods/blob/master/preview/b1.png)
 
 #### 前端运行预览
 
-![Where is my image?](https://github.com/Lemonreds/wefoods/blob/master/preview/01.png)
-![Where is my image?](https://github.com/Lemonreds/wefoods/blob/master/preview/02.png)
-![Where is my image?](https://github.com/Lemonreds/wefoods/blob/master/preview/03.png)
-![Where is my image?](https://github.com/Lemonreds/wefoods/blob/master/preview/04.png)
+![Where is my image?](https://github.com/Lemonreds/wechat-miniprogram-wefoods/blob/master/preview/01.png)
+![Where is my image?](https://github.com/Lemonreds/wechat-miniprogram-wefoods/blob/master/preview/02.png)
+![Where is my image?](https://github.com/Lemonreds/wechat-miniprogram-wefoods/blob/master/preview/03.png)
+![Where is my image?](https://github.com/Lemonreds/wechat-miniprogram-wefoods/blob/master/preview/04.png)
